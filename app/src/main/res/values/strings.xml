@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">JuegoHistoricalRecicler</string>
+    <string-array name="historic_event_names">
+        <item>Revolucion neolitica</item>
+        <item>Fundacion mitica de Roma</item>
+        <item>Inicio de la guerra del Pelopeneso</item>
+        <item>Caida del imperio Romano</item>
+        <item>Invasion arabe de la peninsula Iberica</item>
+        <item>Primer ataque vikingo</item>
+        <item>Coronacion de Carlomagno</item>
+        <item>Batalla de las Navas de Tolosa</item>
+        <item>Toma de Constantinopla</item>
+        <item>Conquista de Granada</item>
+        <item>Llegada de los europeos a America</item>
+        <item>Las 95 tesis de Lutero</item>
+        <item>Guerra de los campesinos alemanes</item>
+        <item>Inicio de la Guerra de los 30 años</item>
+        <item>Fin de la dinastia Ming</item>
+        <item>Paz de Westfalia</item>
+        <item>Llegada de los borbones al trono hispanico</item>
+        <item>Independencia de las 13 colonias</item>
+        <item>Revolucion francesa</item>
+        <item>Congreso de Viena</item>
+        <item>Comuna de Paris</item>
+        <item>Revolucion bolchevique</item>
+        <item>Fin del la I Guerra Mundial</item>
+        <item>Inicio de la Guerra Civil Española</item>
+        <item>Fin del la II Guerra Mundial</item>
+        <item>Comienzo del la III Guerra Mundial</item>
+    </string-array>
+    <string-array name="historic_event_dates">
+        <item>9000 a.E.</item>
+        <item>753 a.C.</item>
+        <item>431 a.C.</item>
+        <item>476</item>
+        <item>711</item>
+        <item>789</item>
+        <item>800</item>
+        <item>1212</item>
+        <item>1453</item>
+        <item>1492</item>
+        <item>1492</item>
+        <item>1517</item>
+        <item>1524</item>
+        <item>1618</item>
+        <item>1644</item>
+        <item>1648</item>
+        <item>1714</item>
+        <item>1776</item>
+        <item>1789</item>
+        <item>1815</item>
+        <item>1871</item>
+        <item>1917</item>
+        <item>1918</item>
+        <item>1936</item>
+        <item>1945</item>
+        <item>Pronto (2032)</item>
+    </string-array>
+    <string-array name="historic_event_locations">
+        <item>Anatolia</item>
+        <item>Lacio</item>
+        <item>Peloponeso</item>
+        <item>Europa</item>
+        <item>Península Ibérica</item>
+        <item>Inglaterra</item>
+        <item>Aquisgrán</item>
+        <item>Jaén</item>
+        <item>Constantinopla</item>
+        <item>Granada</item>
+        <item>América</item>
+        <item>Wittenberg</item>
+        <item>Alemania</item>
+        <item>Europa</item>
+        <item>China</item>
+        <item>Europa</item>
+        <item>Hispania</item>
+        <item>Norteamérica</item>
+        <item>Francia</item>
+        <item>Viena</item>
+        <item>París</item>
+        <item>Rusia</item>
+        <item>Europa</item>
+        <item>España</item>
+        <item>Mundo</item>
+        <item>Sabra dios</item>
+    </string-array>
+</resources>
