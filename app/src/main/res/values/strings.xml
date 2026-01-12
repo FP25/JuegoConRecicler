@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">JuegoHistoricalRecicler</string>
     <string-array name="historic_event_names">
+        <item>Prueba</item>
         <item>Revolucion neolitica</item>
         <item>Fundacion mitica de Roma</item>
         <item>Inicio de la guerra del Pelopeneso</item>
@@ -29,6 +30,7 @@
         <item>Comienzo del la III Guerra Mundial</item>
     </string-array>
     <string-array name="historic_event_dates">
+        <item>220</item>
         <item>9000 a.E.</item>
         <item>753 a.C.</item>
         <item>431 a.C.</item>
@@ -57,6 +59,7 @@
         <item>Pronto (2032)</item>
     </string-array>
     <string-array name="historic_event_locations">
+        <item>xosa</item>
         <item>Anatolia</item>
         <item>Lacio</item>
         <item>Peloponeso</item>
