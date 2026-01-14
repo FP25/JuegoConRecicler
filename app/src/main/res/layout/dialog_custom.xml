@@ -21,7 +21,6 @@
                 android:layout_height="wrap_content"
                 android:hint="Introduzca respuesta"
                 android:inputType="text">
-
             </EditText>
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>

@@ -1,14 +1,21 @@
 package com.fp25.juegopreguntasxrecicler;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 import java.util.ArrayList;
+import java.util.zip.Inflater;
 
 public class AdaptadorDEventos extends RecyclerView.Adapter<AdaptadorDEventos.SostenedordeVistas> {
 
@@ -35,6 +42,8 @@ public class AdaptadorDEventos extends RecyclerView.Adapter<AdaptadorDEventos.So
 
         sostenedor.tvName.setText(eventos.get(position).getEventName());
         sostenedor.tvLocate.setText(eventos.get(position).getEventLocation());
+        sostenedor.tvDate.setText(eventos.get(position).getEventDate());
+
     }
 
     @Override
@@ -45,12 +54,52 @@ public class AdaptadorDEventos extends RecyclerView.Adapter<AdaptadorDEventos.So
 
     public static class SostenedordeVistas extends RecyclerView.ViewHolder{
 
-        TextView tvName,tvLocate;
+        TextView tvName,tvDate,tvLocate;
 
         public SostenedordeVistas(@NonNull View itemView) {
             super(itemView);
             tvName=itemView.findViewById(R.id.tvEvent);
             tvLocate=itemView.findViewById(R.id.tvLocation);
+            tvDate=itemView.findViewById(R.id.tvFecha);
+
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    AlertDialog.Builder alert = new AlertDialog.Builder(itemView.getContext());
+                    LayoutInflater inflador= (LayoutInflater) itemView.getContext().getSystemService(itemView.getContext().LAYOUT_INFLATER_SERVICE); // me salia de sugerencia y probe y me gusto no se si este muy bn que digamos
+                    View dialogCustom = inflador.inflate(R.layout.dialog_custom, null);
+                    alert.setTitle(tvName.getText());
+                    alert.setMessage("En que año surgio? ");
+                    alert.setCancelable(false);
+                    TextInputLayout respuestaLY = dialogCustom.findViewById(R.id.dialog_Txt);
+
+                    alert.setPositiveButton(
+                            "Verificar", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    String respuesta="";
+
+                                    assert respuestaLY.getEditText() != null;
+                                    respuesta = respuestaLY.getEditText().getText().toString();
+
+                                    if (tvDate.getText().equals(respuesta)) {
+                                        Toast.makeText(itemView.getContext(), "la buena mano", Toast.LENGTH_SHORT).show();
+                                    }
+                                    else {
+                                        Toast.makeText(itemView.getContext(), "La mala pa esto ", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+                    alert.setView(dialogCustom);
+
+                    AlertDialog alertDialog=alert.create();
+                    alertDialog.show();
+
+                }
+            });
+
         }
     }
 
