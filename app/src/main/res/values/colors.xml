@@ -3,5 +3,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="naranja_cremoso">#E6A674</color>
+    <color name="cafe_oscuro">#76563D</color>
     <color name="crema">#FFF5E1</color>
 </resources>

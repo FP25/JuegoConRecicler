@@ -4,6 +4,8 @@ public class EventModel {
     public String eventDate;
     public String eventLocation;
 
+    public boolean is_done;
+
     public EventModel(String eventName, String eventDate, String eventLocation) {
         this.eventName = eventName;
         this.eventDate = eventDate;
@@ -18,4 +20,7 @@ public class EventModel {
     public String getEventLocation() {
         return eventLocation;
     }
+
+    public void setIs_done(){is_done=true;}
+
 }

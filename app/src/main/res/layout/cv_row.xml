@@ -7,7 +7,7 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/tajetaPregunta"
+        android:id="@+id/tajetaDPregunta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
-        android:backgroundTint="@color/naranja_cremoso"
+        app:cardBackgroundColor="@color/naranja_cremoso"
         android:layout_margin="10dp"
         app:cardCornerRadius="25dp"
         app:cardElevation="15dp"
