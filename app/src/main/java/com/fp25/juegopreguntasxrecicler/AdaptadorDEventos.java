@@ -16,7 +16,6 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.textfield.TextInputLayout;
-
 import java.util.ArrayList;
 
 public class AdaptadorDEventos extends RecyclerView.Adapter<AdaptadorDEventos.SostenedordeVistas> {
@@ -104,6 +103,7 @@ public class AdaptadorDEventos extends RecyclerView.Adapter<AdaptadorDEventos.So
 
                                     if (tvDate.getText().equals(respuesta)) {
                                         Toast.makeText(itemView.getContext(), "la buena mano", Toast.LENGTH_SHORT).show();
+
                                         Animation anim= AnimationUtils.loadAnimation(itemView.getContext(), android.R.anim.slide_out_right);
                                         anim.setDuration(500);
                                         itemView.startAnimation(anim);

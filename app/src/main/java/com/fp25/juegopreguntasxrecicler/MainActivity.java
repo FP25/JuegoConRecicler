@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
     ArrayList<EventModel>eventosHistoricos=new ArrayList<>();
 
     @Override
@@ -24,13 +23,11 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
         RecyclerView rview = findViewById(R.id.eventsRecicler);
         llenaModelos();
         AdaptadorDEventos adapter = new AdaptadorDEventos(this, eventosHistoricos);
         rview.setAdapter(adapter);
         rview.setLayoutManager(new LinearLayoutManager(this));
-
     }
 
     private void llenaModelos(){
