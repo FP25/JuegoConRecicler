@@ -28,7 +28,7 @@ public class AdaptadorDEventos extends RecyclerView.Adapter<AdaptadorDEventos.So
 
     ArrayList<EventModel> eventos;
 
-    ArrayList<Integer> borrados=new ArrayList<>();
+    ArrayList<Integer> pintaos=new ArrayList<>();
 
 
 
@@ -51,6 +51,14 @@ public class AdaptadorDEventos extends RecyclerView.Adapter<AdaptadorDEventos.So
         sostenedor.tvName.setText(eventos.get(position).getEventName());
         sostenedor.tvLocate.setText(eventos.get(position).getEventLocation());
         sostenedor.tvDate.setText(eventos.get(position).getEventDate());
+
+        if (pintaos.contains(position)){
+            sostenedor.tarjeta.setCardBackgroundColor(sostenedor.itemView.getContext().getResources().getColor(R.color.cafe_oscuro));
+        }
+        else {
+            sostenedor.tarjeta.setCardBackgroundColor(sostenedor.itemView.getContext().getResources().getColor(R.color.naranja_cremoso));
+        }
+
 
     }
 
@@ -106,6 +114,7 @@ public class AdaptadorDEventos extends RecyclerView.Adapter<AdaptadorDEventos.So
                                     else {
                                         Toast.makeText(itemView.getContext(), "la mala mano", Toast.LENGTH_SHORT).show();
                                         tarjeta.setCardBackgroundColor(itemView.getContext().getResources().getColor(R.color.cafe_oscuro));
+                                        pintaos.add(getAbsoluteAdapterPosition());
                                     }
                                 }
                             });
