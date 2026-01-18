@@ -2,6 +2,7 @@ package com.fp25.juegopreguntasxrecicler;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,13 +49,15 @@ public class AdaptadorDEventos extends RecyclerView.Adapter<AdaptadorDEventos.So
         sostenedor.tvLocate.setText(eventos.get(position).getEventLocation());
         sostenedor.tvDate.setText(eventos.get(position).getEventDate());
 
+
+        Log.d("elementos; ",pintaos.toString());
+
         if (pintaos.contains(position)){
             sostenedor.tarjeta.setCardBackgroundColor(sostenedor.itemView.getContext().getResources().getColor(R.color.cafe_oscuro));
         }
         else {
             sostenedor.tarjeta.setCardBackgroundColor(sostenedor.itemView.getContext().getResources().getColor(R.color.naranja_cremoso));
         }
-
 
     }
 
@@ -83,7 +86,7 @@ public class AdaptadorDEventos extends RecyclerView.Adapter<AdaptadorDEventos.So
                 @Override
                 public void onClick(View v) {
                     AlertDialog.Builder alert = new AlertDialog.Builder(itemView.getContext());
-                    LayoutInflater inflador= (LayoutInflater) itemView.getContext().getSystemService(itemView.getContext().LAYOUT_INFLATER_SERVICE); // me salia de sugerencia y probe y me gusto no se si este muy bn que digamos
+                    LayoutInflater inflador= (LayoutInflater) itemView.getContext().getSystemService(itemView.getContext().LAYOUT_INFLATER_SERVICE); // me salia de sugerencia y probe y me sirvio no se si este muy bn que digamos
                     View dialogCustom = inflador.inflate(R.layout.dialog_custom, null);
                     alert.setTitle(tvName.getText());
                     alert.setMessage("En que año surgio? ");
@@ -102,17 +105,23 @@ public class AdaptadorDEventos extends RecyclerView.Adapter<AdaptadorDEventos.So
                                     }
 
                                     if (tvDate.getText().equals(respuesta)) {
-                                        Toast.makeText(itemView.getContext(), "la buena mano", Toast.LENGTH_SHORT).show();
-
+                                        Toast.makeText(itemView.getContext(), "Buena esa", Toast.LENGTH_SHORT).show();
                                         Animation anim= AnimationUtils.loadAnimation(itemView.getContext(), android.R.anim.slide_out_right);
                                         anim.setDuration(500);
                                         itemView.startAnimation(anim);
+                                        for (int i = 0; i <pintaos.size(); i++) {
+                                            if(pintaos.get(i)==getAbsoluteAdapterPosition()){
+                                                tarjeta.setCardBackgroundColor(itemView.getContext().getResources().getColor(R.color.naranja_cremoso));
+                                                pintaos.remove(pintaos.get(i));
+                                            }
+                                        }
                                         eventos.remove(getAbsoluteAdapterPosition());
                                         notifyItemRemoved(getAbsoluteAdapterPosition());
                                         notifyItemRangeChanged(getAbsoluteAdapterPosition(), getItemCount()-getAbsoluteAdapterPosition());
+
                                     }
                                     else {
-                                        Toast.makeText(itemView.getContext(), "la mala mano", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(itemView.getContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                                         tarjeta.setCardBackgroundColor(itemView.getContext().getResources().getColor(R.color.cafe_oscuro));
                                         pintaos.add(getAbsoluteAdapterPosition());
                                     }
